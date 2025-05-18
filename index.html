@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Домашнее задание 8</title>
+</head>
+<body>
+
+  <h1>Домашнее задание 8</h1>
+
+  <script>
+    // Задание 1: Имя и возраст
+    let firstName = "Зарина";
+    let lastName = "Абдухамит";
+    let age = 25;
+    console.log(`Меня зовут ${firstName} ${lastName}, и мне ${age} лет`);
+
+    // Задание 2: Город
+    let city = "Жезказган";
+    console.log("Я родом из города " + city);
+
+    // Задание 3: Пароль
+    let password = "12345"; 
+    let hasAccess = password !== ""; 
+    console.log("Пароль:", password);
+    console.log("Доступ разрешён:", hasAccess);
+
+    // Задание 4: isMember
+    let isMember = false;
+    let isMemberStr = isMember.toString();
+    console.log("Значение:", isMemberStr);          
+    console.log("Тип данных:", typeof isMemberStr); 
+
+    // Задание 5: Корзина
+    let cartItems = 0;
+    let isCartEmpty = Boolean(cartItems);
+    console.log("Количество товаров в корзине:", cartItems);
+    console.log("Корзина пуста?", !isCartEmpty); 
+
+
+    // Задание 6: Округление среднего балла
+    let averageScore = 89.75695;
+    averageScore = parseFloat(averageScore.toFixed(1));
+    console.log("Округлённый балл:", averageScore);
+
+    // Задание 7: Работа со строкой
+    let greetingMessage = "      Приветствуем вас в мире программирования!        ";
+    let trimmedMessage = greetingMessage.trim();
+    console.log("После trim():", trimmedMessage);
+    let upperCaseMessage = trimmedMessage.toUpperCase();
+    console.log("В верхнем регистре:", upperCaseMessage);
+    let containsWord = trimmedMessage.includes("программирования");
+    console.log("Содержит слово 'программирования'?", containsWord);
+
+    // Задание 8: Возраст
+    let userInput = prompt("Введите ваш возраст:");
+    if (userInput === null || userInput.trim() === "") {
+      alert("Пожалуйста, введите возраст.");
+    } else if (isNaN(userInput)) {
+      alert("Возраст должен быть числом.");
+    } else {
+      let age = Number(userInput);
+      if (age < 18) {
+        alert("Доступ ограничен. Вам должно быть 18 лет или больше.");
+      } else {
+        alert("Добро пожаловать!");
+      }
+    }
+
+    // Задание 9: Угадай число
+    const secretNumber = 7; 
+    let userGuess = prompt("Угадай число от 1 до 10:");
+    if (userGuess === null || userGuess.trim() === "") {
+      alert("Вы ничего не ввели.");
+    } else if (isNaN(userGuess)) {
+      alert("Пожалуйста, введите число.");
+    } else {
+      let guess = Number(userGuess);
+      if (guess < 1 || guess > 10) {
+        alert("Введите число от 1 до 10.");
+      } else if (guess === secretNumber) {
+        alert("Поздравляем! Вы угадали число!");
+      } else if (guess > secretNumber) {
+        alert("Слишком большое число.");
+      } else {
+        alert("Слишком маленькое число.");
+      }
+    }
+
+    // Задание 10: Выбор напитка по времени суток
+    let timeOfDay = prompt("Введите время суток: утро, день или вечер");
+    if (typeof timeOfDay !== "string" || timeOfDay.trim() === "") {
+      alert("Ошибка: Введите корректное время суток (утро, день или вечер).");
+    } else {
+      timeOfDay = timeOfDay.trim().toLowerCase();
+      if (timeOfDay === "утро") {
+        alert("Утро — вам подойдёт кофе!");
+      } else if (timeOfDay === "день") {
+        alert("День — как насчёт чая?");
+      } else if (timeOfDay === "вечер") {
+        alert("Вечер — горячий шоколад будет в самый раз!");
+      } else {
+        alert("Ошибка: Пожалуйста, введите 'утро', 'день' или 'вечер'.");
+      }
+    }
+  </script>
+
+</body>
+</html>
